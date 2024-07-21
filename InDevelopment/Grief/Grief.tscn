@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpi0bpido5edt"]
+
+[ext_resource type="Texture2D" uid="uid://cjffo3egeimx5" path="res://InDevelopment/Grief/Images/grief.png" id="1_yodnb"]
+[ext_resource type="Script" path="res://InDevelopment/Grief/Scripts/grief.gd" id="2_f6uqv"]
+
+[node name="Grief" type="CharacterBody2D"]
+script = ExtResource("2_f6uqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yodnb")
