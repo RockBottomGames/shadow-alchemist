@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://m1ityf63dycb"]
+
+[ext_resource type="PackedScene" uid="uid://cpi0bpido5edt" path="res://InDevelopment/Grief/Grief.tscn" id="1_xdg70"]
+[ext_resource type="PackedScene" uid="uid://fkkawo60ahje" path="res://InDevelopment/Testing/TestBottle.tscn" id="2_iauwy"]
+
+[node name="TestingArea" type="Node2D"]
+
+[node name="Grief" parent="." instance=ExtResource("1_xdg70")]
+position = Vector2(386, 292)
+
+[node name="TestBottle" parent="." instance=ExtResource("2_iauwy")]
+position = Vector2(573, 222)

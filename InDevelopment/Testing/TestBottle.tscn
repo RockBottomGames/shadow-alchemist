@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fkkawo60ahje"]
+
+[ext_resource type="Texture2D" uid="uid://ob4rdyxg0o0j" path="res://InDevelopment/Testing/Images/bottle.png" id="1_bwkn2"]
+
+[node name="TestBottle" type="Sprite2D"]
+texture = ExtResource("1_bwkn2")
