@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpi0bpido5edt"]
+[gd_scene load_steps=4 format=3 uid="uid://cpi0bpido5edt"]
 
 [ext_resource type="Texture2D" uid="uid://cjffo3egeimx5" path="res://InDevelopment/Grief/Images/grief.png" id="1_yodnb"]
 [ext_resource type="Script" path="res://InDevelopment/Grief/Scripts/grief.gd" id="2_f6uqv"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bafx"]
+radius = 28.0
+height = 125.0
+
 [node name="Grief" type="CharacterBody2D"]
+collision_mask = 24
 script = ExtResource("2_f6uqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yodnb")
+offset = Vector2(20, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4bafx")

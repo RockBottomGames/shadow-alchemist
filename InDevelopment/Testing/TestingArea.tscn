@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://m1ityf63dycb"]
+[gd_scene load_steps=5 format=3 uid="uid://m1ityf63dycb"]
 
+[ext_resource type="Script" path="res://InDevelopment/Testing/testing_area.gd" id="1_522dv"]
 [ext_resource type="PackedScene" uid="uid://cpi0bpido5edt" path="res://InDevelopment/Grief/Grief.tscn" id="1_xdg70"]
 [ext_resource type="PackedScene" uid="uid://fkkawo60ahje" path="res://InDevelopment/Testing/TestBottle.tscn" id="2_iauwy"]
+[ext_resource type="PackedScene" uid="uid://bbsvf50wod0kt" path="res://InDevelopment/Testing/TestTileMap.tscn" id="3_dab73"]
 
 [node name="TestingArea" type="Node2D"]
+script = ExtResource("1_522dv")
+
+[node name="TestTileMap" parent="." instance=ExtResource("3_dab73")]
 
 [node name="Grief" parent="." instance=ExtResource("1_xdg70")]
 position = Vector2(386, 292)
+
+[node name="Camera2D" type="Camera2D" parent="Grief"]
+position_smoothing_enabled = true
 
 [node name="TestBottle" parent="." instance=ExtResource("2_iauwy")]
 position = Vector2(573, 222)
