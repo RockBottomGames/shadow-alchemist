@@ -58,7 +58,8 @@ func get_shadow_oil_particle_collider(collider_rid: RID) -> ShadowOilParticleCol
 	return null
 
 func free_shadow_oil(shadow_oil_particle_collider: ShadowOilParticleCollider):
-	_shadow_oil_particle_colliders.erase(shadow_oil_particle_collider.get_key())
+	print("freeing shadow oil")
+	_deleted_shadow_oil_particle_colliders.erase(shadow_oil_particle_collider.get_key())
 	shadow_oil_particle_collider.free_rids()
 
 func remove_shadow_oil(collider_rid: RID) -> bool:
