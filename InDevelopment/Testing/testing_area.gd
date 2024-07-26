@@ -1,8 +1,8 @@
-extends Node2D
-
+extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().canvas_cull_mask = 1
 	pass # Replace with function body.
 	
 	
@@ -15,6 +15,7 @@ func _input(event: InputEvent) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var title = "Game v0.1"
+
+func _process(_delta):
+	DisplayServer.window_set_title("FPS %d" % Engine.get_frames_per_second())

@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://m1ityf63dycb"]
+
+[ext_resource type="Script" path="res://InDevelopment/Testing/testing_area.gd" id="1_522dv"]
+[ext_resource type="PackedScene" uid="uid://cpi0bpido5edt" path="res://InDevelopment/Grief/grief.tscn" id="1_xdg70"]
+[ext_resource type="PackedScene" uid="uid://bbsvf50wod0kt" path="res://InDevelopment/Testing/TestTileMap.tscn" id="3_dab73"]
+[ext_resource type="PackedScene" uid="uid://c1qk21mkm78hb" path="res://InDevelopment/Enemies/TinySlenderShadow/tiny_slender_shadow.tscn" id="6_jnes3"]
+
+[node name="TestingArea" type="Node2D"]
+script = ExtResource("1_522dv")
+
+[node name="TestTileMap" parent="." instance=ExtResource("3_dab73")]
+
+[node name="Grief" parent="." instance=ExtResource("1_xdg70")]
+position = Vector2(386, 292)
+
+[node name="Camera2D" type="Camera2D" parent="Grief"]
+position_smoothing_enabled = true
+
+[node name="TinySlenderShadow" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(927, 138)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(945, 39)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(973, 100)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1009, 169)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1060, 116)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1015, 67)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(862, 56)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow8" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(706, 120)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow9" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(724, 21)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow10" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(752, 82)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow11" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(788, 151)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow12" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(839, 98)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow13" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(794, 49)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow14" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(641, 38)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow15" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(986, 476)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow16" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1004, 377)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow17" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1032, 438)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow18" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1068, 507)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow19" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1119, 454)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow20" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1074, 405)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow21" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(921, 394)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow22" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1011, 310)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow23" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1029, 211)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow24" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1057, 272)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow25" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1093, 341)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow26" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1144, 288)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow27" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(1099, 239)
+target = NodePath("../Grief")
+
+[node name="TinySlenderShadow28" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_jnes3")]
+position = Vector2(946, 228)
+target = NodePath("../Grief")

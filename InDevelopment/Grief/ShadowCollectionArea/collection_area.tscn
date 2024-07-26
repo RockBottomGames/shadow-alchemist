@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://couwt413svn65"]
+
+[ext_resource type="Script" path="res://InDevelopment/Grief/ShadowCollectionArea/collection_area.gd" id="1_v6hqu"]
+[ext_resource type="PackedScene" uid="uid://dlgon3cgxjjtk" path="res://InDevelopment/Grief/ShadowCollectionArea/ShadowSuctionArea/suction_area.tscn" id="2_jea8g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blg1m"]
+radius = 50.0
+
+[node name="CollectionArea" type="Area2D"]
+light_mask = 3
+visibility_layer = 3
+collision_layer = 0
+collision_mask = 32
+gravity_space_override = 1
+script = ExtResource("1_v6hqu")
+collection_radius = 50.0
+suction_radius = 100.0
+suction_spread = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_blg1m")
+disabled = true
+
+[node name="SuctionArea" parent="." instance=ExtResource("2_jea8g")]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

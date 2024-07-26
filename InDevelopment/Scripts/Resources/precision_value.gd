@@ -30,9 +30,9 @@ var formatted_value : String:
 		return _formatted_value
 
 func _init(
-	value: float = 0.0,
-	precision: int = 0
+	_value: float = 0.0,
+	_precision: int = 0
 ):
-	self.value = value
-	self.precision = precision
+	self.value = _value
+	self.precision = _precision
 	

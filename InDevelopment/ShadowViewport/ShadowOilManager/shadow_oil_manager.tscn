@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://hsr0q5qctq1v"]
+
+[ext_resource type="Script" path="res://InDevelopment/ShadowViewport/ShadowOilManager/shadow_oil_manager.gd" id="1_8armm"]
+[ext_resource type="Texture2D" uid="uid://c6tqlv4iy2blv" path="res://InDevelopment/ShadowViewport/ShadowOilManager/Images/CircleTexture_128.png" id="2_h24h2"]
+
+[node name="ShadowOilManager" type="Node2D"]
+light_mask = 2
+visibility_layer = 2
+script = ExtResource("1_8armm")
+particle_texture = ExtResource("2_h24h2")

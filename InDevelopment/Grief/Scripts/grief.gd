@@ -1,7 +1,8 @@
 extends CharacterBody2D
 class_name Grief
 
-@onready var LINE_BULLET = preload("res://InDevelopment/Bottle/Line/LineBullet.tscn")
+@onready var LINE_BULLET = preload("res://InDevelopment/Bottle/Line/line_bullet.tscn")
+@onready var collection_area: ShadowCollectionArea = $CollectionArea
 
 const _PRECISION: int = 2
 const _FIRE_COOLDOWN: float = 0.5
@@ -45,10 +46,11 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseMotion:
 		_look_position = get_parent().get_local_mouse_position()
-	if event is InputEventMouseButton:
-		print(_look_position)
-		print(global_position)
-		print(event.global_position)
+		collection_area.point_to_global_position(get_global_mouse_position())
+	if Input.is_action_just_pressed("secondary_fire"):
+		collection_area.is_collecting = true
+	if Input.is_action_just_released("secondary_fire"):
+		collection_area.is_collecting = false
 	
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
@@ -70,3 +72,13 @@ func _physics_process(delta):
 		var parent = self.get_parent()
 		var line_bullet: LineBullet = _line_bullets_pool.pop_front()
 		line_bullet.shoot(_calculated_line_bullet_speed.value, position, _look_position, velocity, parent, self)
+
+
+#
+#func _on_collection_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	#Globals.shadow_oil_manager.remove_shadow_oil(body_rid)
+#
+#
+#func _on_suction_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	##PhysicsServer2D.body_apply_central_force()
+	#pass
