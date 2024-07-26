@@ -5,7 +5,6 @@ class_name ShadowSuctionArea
 @onready var collision_arc_2d: CollisionArc2D = $CollisionArc2D
 
 var _shadow_oil_being_pulled: Dictionary = {}
-var _direction: Vector2 = Vector2(-1, 0)
 var _power: float = 200
 
 var _queued_redraw = true
@@ -55,11 +54,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _queued_redraw:
 		redraw()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for key in _shadow_oil_being_pulled:
 		var shadow_oil: ShadowOilParticleCollider = _shadow_oil_being_pulled[key]
 		if shadow_oil != null:
@@ -67,8 +66,8 @@ func _physics_process(delta: float) -> void:
 			var direction = -location
 			shadow_oil.applyForce(direction.normalized() * _power)
 
-func point_to_global_position(global_position: Vector2):
-	var local_position = to_local(global_position)
+func point_to_global_position(parent_global_position: Vector2):
+	var local_position = to_local(parent_global_position)
 	rotate(local_position.angle())
 	pass
 
@@ -79,9 +78,9 @@ func remove_shadow_oil(shadow_oil_collider_rid: RID):
 	_shadow_oil_being_pulled.erase(shadow_oil_collider_rid)
 
 
-func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_body_shape_entered(body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	add_shadow_oil(body_rid)
 
 
-func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_body_shape_exited(body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	remove_shadow_oil(body_rid)

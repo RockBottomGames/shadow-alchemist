@@ -65,15 +65,15 @@ func redraw():
 func _ready() -> void:
 	pass # Replace with function body.
 
-func point_to_global_position(global_position: Vector2):
-	suction_area.point_to_global_position(global_position)
+func point_to_global_position(parent_global_position: Vector2):
+	suction_area.point_to_global_position(parent_global_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if _queued_redraw:
 		redraw()
 
 
-func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_body_shape_entered(body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	Globals.shadow_oil_manager.remove_shadow_oil(body_rid)
 	on_shadow_oil_collection.emit()

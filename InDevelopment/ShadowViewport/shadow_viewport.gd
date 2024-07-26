@@ -9,7 +9,7 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Globals.camera != null:
 		camera_2d.global_position = Globals.camera.global_position
 		camera_2d.offset = Globals.camera.offset

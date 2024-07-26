@@ -4,7 +4,6 @@ class_name ParticleColliderObject
 var _collider_rid: RID = RID()
 var _particle_rid: RID = RID()
 var _texture: Texture = null
-var _node2D: Node2D = null
 var _texture_size: float = 1.0
 var texture_size : float:
 	get:
@@ -22,13 +21,13 @@ func _init(
 	collision_layer_bitmask: int = 0,
 	collision_mask_bitmask: int = 0,
 	parent_canvas_item_rid: RID = RID(),
-	texture_size: float = 1.0,
+	new_texture_size: float = 1.0,
 	texture: Texture = null,
 	textureModulateColor: Color = Color(0.0, 0.0, 0.0, 0.0),
 	visibility_layer_mask: int = 1,
 ) -> void:
 	_texture = texture
-	_texture_size = texture_size
+	_texture_size = new_texture_size
 	_create_collider(transform2D, world_space, collider_size, collision_layer_bitmask, collision_mask_bitmask)
 	_create_particle(parent_canvas_item_rid, textureModulateColor, visibility_layer_mask)
 
@@ -90,7 +89,7 @@ func getLocation(parent_global_position: Vector2, transform2D = null) -> Vector2
 		newTransform2D = transform2D
 	return newTransform2D.origin - parent_global_position
 
-func physics_process(delta, parent_global_position):
+func physics_process(_delta, parent_global_position):
 	var transform2D = getTransform()
 	if transform2D == null:
 		return

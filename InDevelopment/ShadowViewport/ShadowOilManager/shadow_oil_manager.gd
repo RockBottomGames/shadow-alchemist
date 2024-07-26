@@ -10,7 +10,6 @@ const MIN_SHADOW_PARTICLE_SIZE: float = 2.0
 
 var _shadow_oil_particle_colliders: Dictionary = {}
 var _deleted_shadow_oil_particle_colliders: Dictionary = {}
-var _pull_target: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,12 +40,12 @@ func resize_animate_particle(collider_rid: RID, new_size: float, shadow_particle
 	tweens[collider_rid] = tween
 	return tween
 
-func add_shadow_oil(global_position: Vector2):
+func add_shadow_oil(parent_global_position: Vector2):
 	if (_current_shadow_oil_particles >= max_shadow_oil_particles):
 		return
 	_current_shadow_oil_particles += 1
 	var placement_transform =  Transform2D(global_transform)
-	placement_transform.origin = global_position
+	placement_transform.origin = parent_global_position
 	var particle_collider = ShadowOilParticleCollider.new(placement_transform, get_world_2d().space, get_canvas_item(), particle_texture, MIN_SHADOW_PARTICLE_SIZE)
 	var collider_rid = particle_collider.get_key()
 	_shadow_oil_particle_colliders[collider_rid] = particle_collider
@@ -58,7 +57,6 @@ func get_shadow_oil_particle_collider(collider_rid: RID) -> ShadowOilParticleCol
 	return null
 
 func free_shadow_oil(shadow_oil_particle_collider: ShadowOilParticleCollider):
-	print("freeing shadow oil")
 	_deleted_shadow_oil_particle_colliders.erase(shadow_oil_particle_collider.get_key())
 	shadow_oil_particle_collider.free_rids()
 
@@ -70,19 +68,9 @@ func remove_shadow_oil(collider_rid: RID) -> bool:
 		_current_shadow_oil_particles -= 1
 		return _shadow_oil_particle_colliders.erase(collider_rid)
 	return false
-	
-#func update_pull_target(target: Node2D) -> void:
-	#_pull_target = 
-	
-
-#func pull(collider_rid: RID) -> void:
-	#_shadow_oil_pulled_particle_colliders[collider_rid] = get_shadow_oil_particle_collider(collider_rid)
-
-#func stop_pull(collider_rid: RID) -> void:
-	#_shadow_oil_pulled_particle_colliders[collider_rid] = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _exit_tree() -> void:

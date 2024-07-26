@@ -8,8 +8,8 @@ func _init(
 	world_space: RID = RID(),
 	parent_canvas_item_rid: RID = RID(),
 	texture: Texture = null,
-	texture_size: float = 2.0
+	new_texture_size: float = 2.0
 ) -> void:
 	var collision_layer_bitmask = 32
 	var collision_mask_bitmask = 40
-	super(transform2D, world_space, COLLIDER_SIZE, collision_layer_bitmask, collision_mask_bitmask,parent_canvas_item_rid, texture_size, texture, Color("ff00ff"), 2)
+	super(transform2D, world_space, COLLIDER_SIZE, collision_layer_bitmask, collision_mask_bitmask,parent_canvas_item_rid, new_texture_size, texture, Color("ff00ff"), 2)
