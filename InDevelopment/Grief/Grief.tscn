@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpi0bpido5edt"]
+[gd_scene load_steps=5 format=3 uid="uid://cpi0bpido5edt"]
 
 [ext_resource type="Texture2D" uid="uid://cjffo3egeimx5" path="res://InDevelopment/Grief/Images/grief.png" id="1_yodnb"]
 [ext_resource type="Script" path="res://InDevelopment/Grief/Scripts/grief.gd" id="2_f6uqv"]
+[ext_resource type="PackedScene" uid="uid://couwt413svn65" path="res://InDevelopment/Grief/ShadowCollectionArea/collection_area.tscn" id="3_18blp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4bafx"]
 radius = 28.0
@@ -9,6 +10,7 @@ height = 125.0
 
 [node name="Grief" type="CharacterBody2D"]
 collision_mask = 24
+motion_mode = 1
 script = ExtResource("2_f6uqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +19,8 @@ offset = Vector2(20, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4bafx")
+
+[node name="CollectionArea" parent="." instance=ExtResource("3_18blp")]
+collection_radius = 60.0
+suction_radius = 400.0
+suction_spread = 35.0

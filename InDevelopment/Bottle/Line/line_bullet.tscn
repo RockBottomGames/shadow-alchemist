@@ -1,45 +1,38 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbeej7l7aart7"]
+[gd_scene load_steps=13 format=3 uid="uid://bbeej7l7aart7"]
 
-[ext_resource type="Texture2D" uid="uid://cfyvntxi50ndh" path="res://InDevelopment/Bottle/Line/Images/lob_bottole.png" id="1_4w3h0"]
-[ext_resource type="Script" path="res://InDevelopment/Bottle/Line/line_bullet.gd" id="1_16ibd"]
-[ext_resource type="Shader" path="res://InDevelopment/Bottle/Line/Shadow.gdshader" id="3_mq4hf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_er4h7"]
-shader = ExtResource("3_mq4hf")
-shader_parameter/background_color = Color(1, 0, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 0.290196)
-shader_parameter/offset_in_pixels = Vector2(0, 0)
+[ext_resource type="Script" path="res://InDevelopment/Bottle/Line/line_bullet.gd" id="1_jf0lr"]
+[ext_resource type="Texture2D" uid="uid://cfyvntxi50ndh" path="res://InDevelopment/Bottle/Line/Images/lob_bottole.png" id="3_0mkmf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w188m"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tvmps"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eru47"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k78oa"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nv8s0"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig6oo"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_id8bx"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(96, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5g6tb"]
-atlas = ExtResource("1_4w3h0")
+atlas = ExtResource("3_0mkmf")
 region = Rect2(144, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dgbtg"]
@@ -80,15 +73,7 @@ radius = 13.0
 [node name="LineBullet" type="Area2D"]
 collision_layer = 2
 collision_mask = 12
-script = ExtResource("1_16ibd")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-texture_repeat = 1
-material = SubResource("ShaderMaterial_er4h7")
-position = Vector2(0, 50)
-scale = Vector2(1, 0.5)
-sprite_frames = SubResource("SpriteFrames_dgbtg")
-frame_progress = 0.0658727
+script = ExtResource("1_jf0lr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dgbtg")
