@@ -11,6 +11,9 @@ var formatted_value : String:
 	get:
 		return _calculated_value.formatted_value
 
+func _to_string() -> String:
+	return formatted_value
+
 #@export var precision: int = 0:
 	## Update speed and reset the rotation.
 	#set(new_precision):

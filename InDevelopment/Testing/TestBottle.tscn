@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://fkkawo60ahje"]
+[gd_scene load_steps=4 format=3 uid="uid://dt27qvlvo5uc"]
 
 [ext_resource type="Texture2D" uid="uid://ob4rdyxg0o0j" path="res://InDevelopment/Testing/Images/bottle.png" id="1_bwkn2"]
 [ext_resource type="Script" path="res://InDevelopment/Testing/test_bottle.gd" id="1_pnjcm"]

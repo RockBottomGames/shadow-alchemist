@@ -3,14 +3,13 @@ extends Resource
 class_name PrecisionValue
 
 @export var value: float = 0.0:
-	# Update speed and reset the rotation.
+	get:
+		return value
 	set(new_value):
 		if new_value == value:
 			return
 		value = new_value
 		_formatted_value = ""
-		if Engine.is_editor_hint():
-			pass
 
 @export var precision: int = 0:
 	# Update speed and reset the rotation.
@@ -19,8 +18,6 @@ class_name PrecisionValue
 			return
 		precision = new_precision
 		_formatted_value = ""
-		if Engine.is_editor_hint():
-			pass
 
 var _formatted_value : String = ""
 var formatted_value : String:
@@ -35,4 +32,6 @@ func _init(
 ):
 	self.value = _value
 	self.precision = _precision
-	
+
+func _to_string() -> String:
+	return formatted_value

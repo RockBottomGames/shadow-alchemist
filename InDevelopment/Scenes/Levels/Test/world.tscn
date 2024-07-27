@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://71m2bp06g8dj"]
+[gd_scene load_steps=7 format=3 uid="uid://71m2bp06g8dj"]
 
-[ext_resource type="Script" path="res://InDevelopment/Levels/Test/world.gd" id="1_5ngyh"]
-[ext_resource type="PackedScene" uid="uid://bbsvf50wod0kt" path="res://InDevelopment/Testing/TestTileMap.tscn" id="1_sdhhp"]
-[ext_resource type="Shader" path="res://InDevelopment/Levels/Test/reverse_self.gdshader" id="2_h7vv3"]
-[ext_resource type="PackedScene" uid="uid://cpi0bpido5edt" path="res://InDevelopment/Grief/grief.tscn" id="2_h770a"]
-[ext_resource type="Script" path="res://InDevelopment/Testing/global_camera_2d.gd" id="3_m3iog"]
+[ext_resource type="Script" path="res://InDevelopment/Scenes/Levels/Test/world.gd" id="1_5ngyh"]
+[ext_resource type="PackedScene" uid="uid://bfrup1hfwvw5q" path="res://InDevelopment/Testing/TestTileMap.tscn" id="1_sdhhp"]
+[ext_resource type="Shader" path="res://InDevelopment/Scenes/Levels/Test/reverse_self.gdshader" id="2_h7vv3"]
+[ext_resource type="PackedScene" uid="uid://ci11kt5ud3m8m" path="res://InDevelopment/Grief/grief.tscn" id="2_h770a"]
 [ext_resource type="PackedScene" uid="uid://c1qk21mkm78hb" path="res://InDevelopment/Enemies/TinySlenderShadow/tiny_slender_shadow.tscn" id="4_044qb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s0y4b"]
@@ -21,11 +20,6 @@ material = SubResource("ShaderMaterial_s0y4b")
 
 [node name="Grief" parent="." instance=ExtResource("2_h770a")]
 position = Vector2(386, 292)
-speed = null
-line_bullet_speed = null
-
-[node name="Camera2D" type="Camera2D" parent="Grief"]
-script = ExtResource("3_m3iog")
 
 [node name="TinySlenderShadow" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
 position = Vector2(927, 138)

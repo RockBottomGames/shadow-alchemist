@@ -8,3 +8,5 @@ static var total_shadow_oil_particles: int = 0
 static var camera: Camera2D = null
 
 static var shadow_oil_manager: ShadowOilManager = null
+
+static var scene_manager: SceneManager = null
