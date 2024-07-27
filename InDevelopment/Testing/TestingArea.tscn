@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://m1ityf63dycb"]
+[gd_scene load_steps=7 format=3 uid="uid://4n2ifjkxo0qo"]
 
 [ext_resource type="Script" path="res://InDevelopment/Testing/testing_area.gd" id="1_522dv"]
 [ext_resource type="Script" path="res://InDevelopment/ShadowViewport/shadow_viewport.gd" id="2_ed6nd"]
-[ext_resource type="PackedScene" uid="uid://71m2bp06g8dj" path="res://InDevelopment/Levels/Test/world.tscn" id="3_osvje"]
+[ext_resource type="PackedScene" uid="uid://71m2bp06g8dj" path="res://InDevelopment/Scenes/Levels/Test/world.tscn" id="3_osvje"]
 [ext_resource type="Shader" path="res://InDevelopment/ShadowViewport/reverse_shader.gdshader" id="3_svp6i"]
 [ext_resource type="PackedScene" uid="uid://hsr0q5qctq1v" path="res://InDevelopment/ShadowViewport/ShadowOilManager/shadow_oil_manager.tscn" id="4_81ydh"]
 
@@ -25,18 +25,20 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="ShadowViewport" type="MarginContainer" parent="SubViewport/FullScreenMarginContainer"]
-z_index = 1
 z_as_relative = false
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 script = ExtResource("2_ed6nd")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewport/FullScreenMarginContainer/ShadowViewport"]
 show_behind_parent = true
 material = SubResource("ShaderMaterial_wxp1a")
 layout_mode = 2
+mouse_filter = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewport/FullScreenMarginContainer/ShadowViewport/SubViewportContainer"]
@@ -49,5 +51,6 @@ render_target_update_mode = 4
 [node name="ShadowOilManager" parent="SubViewport/FullScreenMarginContainer/ShadowViewport/SubViewportContainer/SubViewport" instance=ExtResource("4_81ydh")]
 
 [node name="Camera2D" type="Camera2D" parent="SubViewport/FullScreenMarginContainer/ShadowViewport/SubViewportContainer/SubViewport"]
+position_smoothing_enabled = true
 
 [node name="World" parent="." instance=ExtResource("3_osvje")]

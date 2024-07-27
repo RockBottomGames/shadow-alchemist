@@ -7,10 +7,11 @@ var _caller: Node = null
 var _speed_vector: Vector2 = Vector2.ZERO
 var _speed: float = 0.0
 var _direction: Vector2 = Vector2(1, 0)
+var _damage: float = 10.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-func shoot(speed: float, starting_point: Vector2, target_point: Vector2, _shooter_velocity: Vector2, parented_by: Node, caller: Node):
+func shoot(damage: float, speed: float, starting_point: Vector2, target_point: Vector2, _shooter_velocity: Vector2, parented_by: Node, caller: Node):
 	_direction = (target_point - starting_point).normalized()
 	position = starting_point + (_direction * 50.0)
 	if _parented_by != null:
@@ -22,6 +23,7 @@ func shoot(speed: float, starting_point: Vector2, target_point: Vector2, _shoote
 	_caller = caller
 	_speed = speed
 	_speed_vector = (_speed * _direction)
+	_damage = damage
 	if collision_shape_2d != null:
 		collision_shape_2d.set_deferred("disabled", false)
 
@@ -54,8 +56,8 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	hit()
-	if body.has_method("do_damage"):
-		body.do_damage(1, _speed_vector)
+	if body.has_method("receive_damage_with_knockback"):
+		body.receive_damage_with_knockback(_damage, _speed_vector)
 
 
 #func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:

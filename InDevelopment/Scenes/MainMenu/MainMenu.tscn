@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://c32ws73rr1r1y"]
+
+[ext_resource type="Script" path="res://InDevelopment/Scenes/MainMenu/main_menu.gd" id="1_5dgll"]
+
+[node name="MainMenu" type="MarginContainer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 20
+script = ExtResource("1_5dgll")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]The Shadow Alchemist[/center]"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayButtonContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_bottom = 25
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/VBoxContainer/PlayButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "New Game"
+
+[node name="ContinueButtonContainer" type="MarginContainer" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_bottom = 25
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/VBoxContainer/ContinueButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Continue"
+
+[node name="QuitButtonController" type="MarginContainer" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_bottom = 25
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer/QuitButtonController"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/PlayButtonContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ContinueButtonContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/QuitButtonController/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,7 +1,6 @@
-extends CharacterBody2D
+extends BaseCharacter
 class_name TinySlenderShadow
 
-const _PRECISION: int = 2
 @onready var recalculate_timer: Timer = $Navigation/RecalculateTimer
 @onready var animation_tree: EnemyAnimationTree = $Sprite2D/AnimationTree
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -13,17 +12,6 @@ var is_dead : bool:
 		return animation_tree.is_dead
 	set(new_is_dead):
 		animation_tree.is_dead = new_is_dead
-
-var _calculated_speed = CalculatedValue.new(200, _PRECISION)
-@export var speed: float = 200.0:
-	# Update speed and reset the rotation.
-	set(new_speed):
-		if new_speed == speed:
-			return
-		speed = new_speed
-		_calculated_speed = CalculatedValue.new(speed, _PRECISION)
-		if Engine.is_editor_hint():
-			pass
 
 @export var target: Node2D = null
 @export var navigation_agent: NavigationAgent2D = null
@@ -48,9 +36,10 @@ func spray_shadow_oil():
 		var random_placement = _random_inside_unit_circle() * 32
 		Globals.shadow_oil_manager.add_shadow_oil(global_position + random_placement)
 	
-func do_damage(_amount: float, speed_vector: Vector2):
+func receive_damage_with_knockback(amount: float, speed_vector: Vector2):
 	animation_tree.is_hurt = true
 	_knockback_velocity = speed_vector.normalized() * 10
+	receive_damage(amount)
 	_die()
 
 func _physics_process(_delta: float) -> void:
