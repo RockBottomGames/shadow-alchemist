@@ -1,136 +1,128 @@
-[gd_scene load_steps=7 format=3 uid="uid://71m2bp06g8dj"]
+[gd_scene load_steps=5 format=3 uid="uid://71m2bp06g8dj"]
 
 [ext_resource type="Script" path="res://InDevelopment/Scenes/Levels/Test/world.gd" id="1_5ngyh"]
-[ext_resource type="PackedScene" uid="uid://bfrup1hfwvw5q" path="res://InDevelopment/Testing/TestTileMap.tscn" id="1_sdhhp"]
-[ext_resource type="Shader" path="res://InDevelopment/Scenes/Levels/Test/reverse_self.gdshader" id="2_h7vv3"]
-[ext_resource type="PackedScene" uid="uid://ci11kt5ud3m8m" path="res://InDevelopment/Grief/grief.tscn" id="2_h770a"]
+[ext_resource type="PackedScene" uid="uid://cdxn75hf2rsvm" path="res://InDevelopment/Scenes/Levels/Lab/lab_tilemap_layer.tscn" id="2_5qdyx"]
+[ext_resource type="PackedScene" uid="uid://ci11kt5ud3m8m" path="res://InDevelopment/Grief/Grief.tscn" id="2_h770a"]
 [ext_resource type="PackedScene" uid="uid://c1qk21mkm78hb" path="res://InDevelopment/Enemies/TinySlenderShadow/tiny_slender_shadow.tscn" id="4_044qb"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0y4b"]
-shader = ExtResource("2_h7vv3")
-shader_parameter/background_color = null
-shader_parameter/shadow_color = null
-shader_parameter/offset_in_pixels = null
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5ngyh")
 
-[node name="TestTileMap" parent="." instance=ExtResource("1_sdhhp")]
-material = SubResource("ShaderMaterial_s0y4b")
+[node name="LabTilemapLayer" parent="." instance=ExtResource("2_5qdyx")]
 
 [node name="Grief" parent="." instance=ExtResource("2_h770a")]
-position = Vector2(386, 292)
+position = Vector2(364, 784)
 
 [node name="TinySlenderShadow" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(927, 138)
+position = Vector2(905, 630)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(945, 39)
+position = Vector2(923, 531)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(973, 100)
+position = Vector2(951, 592)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1009, 169)
+position = Vector2(987, 661)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1060, 116)
+position = Vector2(1038, 608)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1015, 67)
+position = Vector2(993, 559)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(862, 56)
+position = Vector2(840, 548)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow8" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(706, 120)
+position = Vector2(684, 612)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow9" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(724, 21)
+position = Vector2(702, 513)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow10" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(752, 82)
+position = Vector2(730, 574)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow11" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(788, 151)
+position = Vector2(766, 643)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow12" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(839, 98)
+position = Vector2(817, 590)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow13" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(794, 49)
+position = Vector2(772, 541)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow14" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(641, 38)
+position = Vector2(619, 530)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow15" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(986, 476)
+position = Vector2(964, 968)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow16" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1004, 377)
+position = Vector2(982, 869)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow17" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1032, 438)
+position = Vector2(1010, 930)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow18" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1068, 507)
+position = Vector2(1046, 999)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow19" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1119, 454)
+position = Vector2(1097, 946)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow20" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1074, 405)
+position = Vector2(1052, 897)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow21" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(921, 394)
+position = Vector2(899, 886)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow22" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1011, 310)
+position = Vector2(989, 802)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow23" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1029, 211)
+position = Vector2(1007, 703)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow24" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1057, 272)
+position = Vector2(1035, 764)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow25" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1093, 341)
+position = Vector2(1071, 833)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow26" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1144, 288)
+position = Vector2(1122, 780)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow27" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(1099, 239)
+position = Vector2(1077, 731)
 target = NodePath("../Grief")
 
 [node name="TinySlenderShadow28" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_044qb")]
-position = Vector2(946, 228)
+position = Vector2(924, 720)
 target = NodePath("../Grief")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]

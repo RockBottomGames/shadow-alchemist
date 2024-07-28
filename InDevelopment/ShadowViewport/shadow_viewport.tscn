@@ -1,16 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://kryut1dmtqd2"]
+[gd_scene load_steps=4 format=3 uid="uid://kryut1dmtqd2"]
 
 [ext_resource type="Script" path="res://InDevelopment/ShadowViewport/shadow_viewport.gd" id="1_otlhq"]
-[ext_resource type="Shader" path="res://InDevelopment/ShadowViewport/reverse_shader.gdshader" id="2_jfqrw"]
 [ext_resource type="PackedScene" uid="uid://hsr0q5qctq1v" path="res://InDevelopment/ShadowViewport/ShadowOilManager/shadow_oil_manager.tscn" id="7_r2v0r"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxp1a"]
-shader = ExtResource("2_jfqrw")
-shader_parameter/background_color = null
-shader_parameter/shadow_color = null
-shader_parameter/offset_in_pixels = null
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7we1s"]
 
 [node name="ShadowViewport" type="MarginContainer"]
+material = SubResource("ShaderMaterial_7we1s")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,7 +19,6 @@ script = ExtResource("1_otlhq")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 show_behind_parent = true
-material = SubResource("ShaderMaterial_wxp1a")
 layout_mode = 2
 mouse_filter = 2
 stretch = true

@@ -6,11 +6,9 @@
 [ext_resource type="Shader" path="res://InDevelopment/ShadowViewport/reverse_shader.gdshader" id="3_svp6i"]
 [ext_resource type="PackedScene" uid="uid://hsr0q5qctq1v" path="res://InDevelopment/ShadowViewport/ShadowOilManager/shadow_oil_manager.tscn" id="4_81ydh"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxp1a"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejrqg"]
 shader = ExtResource("3_svp6i")
-shader_parameter/background_color = null
-shader_parameter/shadow_color = null
-shader_parameter/offset_in_pixels = null
+shader_parameter/reverse_color = Color(0.835262, 0.779145, 1, 1)
 
 [node name="TestingArea" type="Node"]
 script = ExtResource("1_522dv")
@@ -36,7 +34,7 @@ script = ExtResource("2_ed6nd")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="SubViewport/FullScreenMarginContainer/ShadowViewport"]
 show_behind_parent = true
-material = SubResource("ShaderMaterial_wxp1a")
+material = SubResource("ShaderMaterial_ejrqg")
 layout_mode = 2
 mouse_filter = 2
 stretch = true
